@@ -28,7 +28,8 @@ def get_ed():
         print('fail')
         return 0
     else:
-        message = ('\U0001F4F0 <b>{}</b><a href="{}">.</a> #{}'.format(city, cover, city.replace(' ','')) +
+        message = ('<a href="{}">\U0001F4F0</a> #{}'.format(cover, city) +
+            # '\n\n#{}'.format(city.replace(' ','')) +
             '\n{}'.format(hoje) +
             '\n<a href="{}">Arquivo PDF</a>'.format(pdf))
         for i in dest.split(','):
