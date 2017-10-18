@@ -13,6 +13,7 @@ config.read('bot.conf')
 
 token = config[arg]['TOKEN']
 city = config[arg]['CITY']
+dest = config[arg]['DEST']
 now = datetime.now()
 today = now.strftime('%Y%m%d')
 hoje = now.strftime('%d/%m/%Y')
@@ -30,7 +31,8 @@ def get_ed():
         message = ('\U0001F4F0 <b>{}</b><a href="{}">.</a> #{}'.format(city, cover, city.replace(' ','')) +
             '\n{}'.format(hoje) +
             '\n<a href="{}">Arquivo PDF</a>'.format(pdf))
-        bot.send_message('9083329', message, parse_mode='HTML')
+        for i in dest.split(','):
+            bot.send_message(i, message, parse_mode='HTML')
         return 1
 
 if __name__ == '__main__':
