@@ -34,6 +34,7 @@ def get_ed():
             '\n<a href="{}">Arquivo PDF</a>'.format(pdf))
         for i in dest.split(','):
             bot.send_message(i, message, parse_mode='HTML')
+            bot.send_document(i, pdf, caption=str(hoje + ' #' + city.replace(' ','')))
         return 1
 
 if __name__ == '__main__':
