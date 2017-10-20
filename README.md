@@ -30,15 +30,15 @@ Today (October, 19. 2017), the journal is available on the following locals:
 | Local              | Argument        |
 |--------------------|-----------------|
 | São Paulo          | `MetroSaoPaulo` |
-| Rio de Janeiro     | `MetroSaoPaulo` |
-| Belo Horizonte     | `MetroSaoPaulo` |
-| Porto Alegre       | `MetroSaoPaulo` |
-| Brasília           | `MetroSaoPaulo` |
-| Curitiba           | `MetroSaoPaulo` |
-| Campinas           | `MetroSaoPaulo` |
-| ABC                | `MetroSaoPaulo` |
-| Maringá            | `MetroSaoPaulo` |
-| Espírito Santo     | `MetroSaoPaulo` |
+| Rio de Janeiro     | `MetroRio` |
+| Belo Horizonte     | `MetroBH` |
+| Porto Alegre       | `PortoAlegre` |
+| Brasília           | `Brasilia` |
+| Curitiba           | `MetroCuritiba` |
+| Campinas           | `MetroCampinas` |
+| ABC                | `MetroABC` |
+| Maringá            | `Maringa` |
+| Espírito Santo     | `EspiritoSanto` |
 
 Choose one local and use the item from Argument column in the following command on the console and see the bot working:
 
