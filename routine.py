@@ -39,9 +39,9 @@ def get_ed():
 
 if __name__ == '__main__':
     sent = get_ed()
-    while sent == 0:
+    attemp = 0
+    while sent == 0 and attemp < 5:
         time.sleep(900)
+        attemp = attemp + 1
         sent = get_ed()
-        
-
 
