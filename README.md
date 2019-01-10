@@ -29,14 +29,13 @@ Today (October, 19. 2017), the journal is available on the following locals:
 
 | Local              | Argument        |
 |--------------------|-----------------|
-| São Paulo          | `MetroSaoPaulo` |
-| Rio de Janeiro     | `MetroRio` |
+| São Paulo          | `Metro-Sao-Paulo` |
 | Belo Horizonte     | `MetroBH` |
 | Porto Alegre       | `PortoAlegre` |
 | Brasília           | `Brasilia` |
-| Curitiba           | `MetroCuritiba` |
-| Campinas           | `MetroCampinas` |
-| ABC                | `MetroABC` |
+| Curitiba           | `Metro-Curitiba` |
+| Campinas           | `Metro-Campinas` |
+| ABC                | `Metro-ABC` |
 | Maringá            | `Maringa` |
 | Espírito Santo     | `EspiritoSanto` |
 
