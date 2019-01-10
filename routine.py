@@ -15,31 +15,25 @@ token = config[arg]['TOKEN']
 city = config[arg]['CITY']
 dest = config[arg]['DEST']
 now = datetime.now()
-today = now.strftime('%Y%m%d')
+today = now.strftime('%Y/%m/%d/%Y%m%d_')
 hoje = now.strftime('%d/%m/%Y')
+city = city
 
 cover = 'https://www2.metrojornal.com.br/pdf/assets/capas/{}_{}_Capa.jpg'.format(today, arg)
-pdf = 'https://www2.metrojornal.com.br/pdf/assets/pdfs/{}_{}.pdf'.format(today, arg)
+pdf = 'https://rm.metrolatam.com/pdf/{}{}.pdf'.format(today, arg.lower())
 bot = telebot.TeleBot(token)
 
 def get_ed():
-    response = requests.get(cover)
-    if 200 != response.status_code:
-        print('fail')
-        return 0
-    else:
         message = ('<a href="{}">\U0001F4F0</a> #{}'.format(cover, city.replace(' ','')) +
-            # '\n\n#{}'.format(city.replace(' ','')) +
             '\n{}'.format(hoje) +
             '\n<a href="{}">Arquivo PDF</a>'.format(pdf))
         for i in dest.split(','):
             bot.send_message(i, message, parse_mode='HTML')
-            bot.send_document(i, pdf, caption=str(hoje + ' #' + city.replace(' ','')))
         return 1
 
 if __name__ == '__main__':
     sent = get_ed()
-    attemp = 0
+    attemp = 4
     while sent == 0 and attemp < 5:
         time.sleep(900)
         attemp = attemp + 1
