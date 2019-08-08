@@ -15,7 +15,6 @@ config.read('bot.conf')
 token = config[arg]['TOKEN']
 city = config[arg]['CITY']
 dest = config[arg]['DEST']
-dest = '9083329'
 now = datetime.now()
 today = now.strftime('%Y/%m/%d/%Y%m%d_')
 todayclean = now.strftime('%Y%m%d')
