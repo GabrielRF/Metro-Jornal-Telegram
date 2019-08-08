@@ -15,26 +15,28 @@ config.read('bot.conf')
 token = config[arg]['TOKEN']
 city = config[arg]['CITY']
 dest = config[arg]['DEST']
+dest = '9083329'
 now = datetime.now()
 today = now.strftime('%Y/%m/%d/%Y%m%d_')
 todayclean = now.strftime('%Y%m%d')
 hoje = now.strftime('%d/%m/%Y')
 city = city
 
-url = 'https://www.readmetro.com/pt/brazil/{}/{}/1/'.format(city.lower(),todayclean)
+url = 'https://www.readmetro.com/pt/brazil/{}/{}/1/'.format(arg.lower(),todayclean)
 cover = 'https://www2.metrojornal.com.br/pdf/assets/capas/{}_{}_Capa.jpg'.format(today, arg)
-pdf = 'https://rm.metrolatam.com/pdf/{}{}.pdf'.format(today, arg.lower())
+pdf = 'https://www.readmetro.com/pt/brazil/{}/{}/1/'.format(arg.lower(), todayclean)
 bot = telebot.TeleBot(token)
 
 def get_ed():
     message = ('<a href="{}">\U0001F4F0</a> #{}'.format(cover, city.replace(' ','')) +
         '\n{}'.format(hoje) +
-        '\n<a href="{}">Arquivo PDF</a>'.format(pdf))
+        '\n<a href="{}">Clique aqui para ler</a>'.format(pdf))
     for i in dest.split(','):
         bot.send_message(i, message, parse_mode='HTML')
     return 1
 
 def get_img(url):
+    print(url)
     response = requests.get(url)
     html = BeautifulSoup(response.content, 'html.parser')
     img = html.find('meta', {'property': 'og:image'})
@@ -48,6 +50,7 @@ def get_img(url):
     except TypeError:
         img = ''
         preview = True
+    print(img)
     return preview, img
 
 
