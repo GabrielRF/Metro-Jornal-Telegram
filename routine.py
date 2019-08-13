@@ -37,6 +37,8 @@ def get_ed():
 def get_img(url):
     print(url)
     response = requests.get(url)
+    if '404!' in response.text:
+        preview = True
     html = BeautifulSoup(response.content, 'html.parser')
     img = html.find('meta', {'property': 'og:image'})
     if not img:
@@ -55,9 +57,9 @@ def get_img(url):
 
 if __name__ == '__main__':
     preview, cover = get_img(url)
-    sent = get_ed()
-    attemp = 4
-    while sent == 0 and attemp < 5:
+    attemp = 0
+    sent = 0
+    while sent == 0 and preview == False and attemp < 5:
         time.sleep(900)
         attemp = attemp + 1
         sent = get_ed()
